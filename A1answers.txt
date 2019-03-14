@@ -1,0 +1,5 @@
+1.This is to indicate that the memory locations of the stack that was previously used by the last finished thread is now marked useable for the operating system.
+
+2.The wasteTime calculation is intented to prolong the running time for each loop so that the signal can be catched before the thread function finishes. This would make it easier to inspect the effectiveness of the pre-emptive scheduler, otherwise the thead function would finish without the signal received.
+
+3.Without blocking the signal, the thead would continue to run until the thead function finish, the current thread would print out all the five messages without switching between the threads, as rand() does not have a critical section so it would not be called from multiple threads.
